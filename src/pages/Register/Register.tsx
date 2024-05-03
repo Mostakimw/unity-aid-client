@@ -2,10 +2,14 @@ import { Button, Col, Row } from "antd";
 import UAForm from "../components/form/UAForm";
 import UAInput from "../components/form/UAInput";
 import { FieldValues } from "react-hook-form";
+import { useAddUserMutation } from "../../redux/features/auth/authApi";
 
 const Register = () => {
-  const handleSubmit = (data: FieldValues) => {
-    console.log(data);
+  const [createUser, { error }] = useAddUserMutation(undefined);
+  console.log(error);
+  const handleSubmit = async (data: FieldValues) => {
+    const res = await createUser(data);
+    console.log(res);
   };
   return (
     <Row justify="center">
@@ -20,7 +24,7 @@ const Register = () => {
           <UAInput
             label="Email"
             placeholder="Type your Email"
-            name="Email"
+            name="email"
             type="text"
           />
           <UAInput
