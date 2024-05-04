@@ -7,7 +7,7 @@ const Container = ({
   style,
 }: {
   children: ReactNode;
-  style: CSSProperties;
+  style?: CSSProperties;
 }) => {
   return (
     <div style={{ maxWidth: "1280px", margin: "0 auto", ...style }}>
