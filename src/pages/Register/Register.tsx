@@ -1,6 +1,6 @@
 import { Button, Col, Row } from "antd";
-import UAForm from "../components/form/UAForm";
-import UAInput from "../components/form/UAInput";
+import UAForm from "../../components/form/UAForm";
+import UAInput from "../../components/form/UAInput";
 import { FieldValues } from "react-hook-form";
 import { useAddUserMutation } from "../../redux/features/auth/authApi";
 
@@ -34,7 +34,9 @@ const Register = () => {
             type="text"
           />
           <div>
-            <Button htmlType="submit" type="primary" color="#614700">Register</Button>
+            <Button htmlType="submit" type="primary" color="#614700">
+              Register
+            </Button>
           </div>
         </UAForm>
       </Col>
