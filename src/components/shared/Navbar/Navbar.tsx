@@ -5,14 +5,7 @@ import { MenuOutlined, UserOutlined } from "@ant-design/icons";
 import "./Navbar.css";
 
 const { Header } = Layout;
-const { Item } = Menu;
 
-// const items = [
-//   {
-//     label: "Home",
-//     key: 1
-//   }
-// ]
 const items = [
   { label: "Home", key: 1, target: "/" },
   { label: "All Donations", key: 2, target: "/donations" },

@@ -1,0 +1,19 @@
+.title h1 {
+  text-align: center !important;
+  text-transform: uppercase !important;
+  font-size: 2rem !important;
+  letter-spacing: 1px !important;
+  color: #cf2420 !important;
+  display: grid !important;
+  grid-template-columns: 1fr auto 1fr !important;
+  grid-template-rows: 16px 0 !important;
+  grid-gap: 22px !important;
+}
+
+.title h1:after,
+.title h1:before {
+  content: " " !important;
+  display: block !important;
+  border-bottom: 2px solid #ccc !important;
+  background-color: #f8f8f8 !important;
+}
