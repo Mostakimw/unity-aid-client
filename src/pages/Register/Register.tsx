@@ -1,6 +1,6 @@
 import { Button, Col, Row } from "antd";
-import UAForm from "../components/form/UAForm";
-import UAInput from "../components/form/UAInput";
+import UAForm from "../../components/form/UAForm";
+import UAInput from "../../components/form/UAInput";
 import { FieldValues } from "react-hook-form";
 import { useAddUserMutation } from "../../redux/features/auth/authApi";
 
@@ -12,8 +12,8 @@ const Register = () => {
     console.log(res);
   };
   return (
-    <Row justify="center">
-      <Col span={6}>
+    <Row>
+      <Col span={12}>
         <UAForm onSubmit={handleSubmit}>
           <UAInput
             label="Name"
@@ -29,12 +29,14 @@ const Register = () => {
           />
           <UAInput
             label="Password"
-            placeholder="Type your password"
+            placeholder="Type a password"
             name="password"
             type="text"
           />
           <div>
-            <Button htmlType="submit">Register</Button>
+            <Button htmlType="submit" type="primary" color="#614700">
+              Register
+            </Button>
           </div>
         </UAForm>
       </Col>
