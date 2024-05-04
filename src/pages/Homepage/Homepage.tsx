@@ -1,7 +1,10 @@
+import Banner from "../../components/Home/Banner/Banner";
+
 const Homepage = () => {
   return (
-    <div>
-      <h1>This is Homepage component</h1>
+    <div style={{marginTop: 70}}>
+      
+      <Banner />
     </div>
   );
 };

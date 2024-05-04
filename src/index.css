@@ -9,3 +9,8 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+
+.text-secondary {
+  color: #f9f9f9;
+  line-height: 1.5rem;
+}
