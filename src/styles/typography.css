@@ -1,8 +1,11 @@
 @layer base {
   h1 {
-    @apply text-6xl;
+    @apply text-5xl;
   }
+}
+
+@layer base {
   p {
-    @apply text-black !important;
+    @apply leading-6;
   }
 }

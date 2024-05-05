@@ -24,7 +24,7 @@ const Testimonial = () => {
       });
   }, []);
   return (
-    <Container style={{ marginTop: 50 }}>
+    <Container style={{ marginTop: 80 }}>
       <SectionTitle>Testimonial</SectionTitle>
       <div className="shadow-xl rounded-md h-[550px]">
         <Row style={{ marginTop: 30, height: 470 }}>
