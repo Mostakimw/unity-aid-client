@@ -1,52 +1,61 @@
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 import { Col, Row, Space } from "antd";
 import Container from "../../Container/Container";
 import SectionTitle from "../../reusable/SectionTitle/SectionTitle";
+import { useEffect, useState } from "react";
+import { BulbOutlined } from "@ant-design/icons";
 
 const Testimonial = () => {
+  const [testimonial, setTestimonial] = useState([]);
+  useEffect(() => {
+    fetch("testimonial.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setTestimonial(data);
+      });
+  }, []);
   return (
     <Container style={{ marginTop: 50 }}>
       <SectionTitle>Testimonial</SectionTitle>
-      <Row
-        style={{ marginTop: 30, height: 550 }}
-        gutter={35}
-        className="shadow-xl rounded-md"
-      >
-        {/* title side */}
-        <Col span={10}>
-          <div className="bg-blue-500 py-24 px-8 rounded-br-[6rem]">
-            <h1 className="text-gray-200">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
-              nihil.
-            </h1>
-          </div>
-        </Col>
-        {/* review side */}
-        <Col span={14}>
-          <Space
-            size={20}
-            direction="vertical"
-            align="center"
-            className="h-full max-w-md justify-center"
-          >
-            <h2 className="text-center">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Perspiciatis, aperiam?
-            </h2>
-            <p className="text-gray-600 text-justify">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id
-              sapiente unde repellat alias similique illo, fugiat eaque a
-              possimus incidunt pariatur quis quaerat, inventore explicabo
-              voluptatum cupiditate rerum neque accusamus ullam. Perspiciatis
-              ipsam nisi expedita tenetur fugiat! Laboriosam explicabo
-              distinctio libero autem aliquam, similique officia.
-            </p>
-            <Space direction="vertical" align="center">
-              <h5>John Dow</h5>
-              <p>Web developer</p>
-            </Space>
-          </Space>
-        </Col>
-      </Row>
+      <div className="shadow-xl rounded-md h-[550px]">
+        <Row style={{ marginTop: 30, height: 470 }}>
+          {/* title side */}
+          <Col span={10}>
+            <div className="bg-[#011D41] py-24 px-20 rounded-br-[6rem] h-full flex items-center justify-center">
+              <div>
+                <BulbOutlined className="text-[5rem] text-yellow-500 text-center" />
+                <h1 className="text-gray-200">See What Our Top Donor Says</h1>
+              </div>
+            </div>
+          </Col>
+          {/* review side */}
+          <Col span={14} className="h-full flex justify-center items-center ">
+            {testimonial.length > 0 && (
+              <Carousel
+                autoPlay
+                autoFocus
+                interval={400}
+                showThumbs={false}
+                className="max-w-md"
+              >
+                {testimonial.map((item) => (
+                  <div key={item.id} className="max-w-md space-y-5 text-center">
+                    <h2 className="text-center">{item.title}</h2>
+                    <p className="text-gray-600 text-justify">
+                      {item.description}
+                    </p>
+                    <div className="space-y-2">
+                      <h5>John Dow</h5>
+                      <p className="text-gray-900">{item.designation}</p>
+                    </div>
+                  </div>
+                ))}
+              </Carousel>
+            )}
+          </Col>
+        </Row>
+      </div>
     </Container>
   );
 };
