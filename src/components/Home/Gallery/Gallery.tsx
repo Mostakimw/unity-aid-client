@@ -4,6 +4,7 @@ import Container from "../../Container/Container";
 import "./Gallery.css";
 import { GalleryCard, MobileGalleryCard } from "./GalleryCard";
 import { useMediaQuery } from "react-responsive";
+import SectionTitle from "../../reusable/SectionTitle/SectionTitle";
 
 const imageUrls = [
   [
@@ -37,7 +38,8 @@ const Gallery = () => {
 
   return (
     <Container style={{ marginTop: 112 }}>
-      <div className="gallery">
+      <SectionTitle>Our Memories</SectionTitle>
+      <div className="gallery mt-16">
         {/* carousel for medium and large devices */}
         {!isMobile ? (
           <Carousel showThumbs={false} showStatus={false} infiniteLoop>
