@@ -4,7 +4,7 @@ import donation from "./../../../assets/summery2.svg";
 const Summery = () => {
   return (
     <div
-      className="summery h-80 md:h-[calc(100vh-200px)] mt-20"
+      className="summery h-80 md:h-[calc(100vh-200px)] mt-28"
       style={{
         backgroundImage: `url(${summeryImg})`,
         backgroundRepeat: "no-repeat",

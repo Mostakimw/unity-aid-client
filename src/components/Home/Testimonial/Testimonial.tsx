@@ -1,10 +1,10 @@
-import "react-responsive-carousel/lib/styles/carousel.min.css"; 
-import { Carousel } from "react-responsive-carousel";
+import "./Testimonial.css";
 import { Col, Row } from "antd";
 import Container from "../../Container/Container";
-import SectionTitle from "../../reusable/SectionTitle/SectionTitle";
 import { useEffect, useState } from "react";
 import { BulbOutlined } from "@ant-design/icons";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
 interface TTestimonial {
   id: string;
@@ -24,32 +24,47 @@ const Testimonial = () => {
       });
   }, []);
   return (
-    <Container style={{ marginTop: 80 }}>
-      <SectionTitle>Testimonial</SectionTitle>
-      <div className="shadow-xl rounded-md h-[550px]">
-        <Row style={{ marginTop: 30, height: 470 }}>
+    <Container style={{ marginTop: 112 }}>
+      {/* <SectionTitle>Testimonial</SectionTitle> */}
+      <div className="shadow-xl rounded-md h-fit lg:h-[550px] ">
+        <Row style={{ marginTop: 30 }} className="lg:h-[470px]">
           {/* title side */}
-          <Col span={10}>
-            <div className="bg-[#011D41] py-24 px-20 rounded-br-[6rem] h-full flex items-center justify-center">
+          <Col xs={{ span: 24 }} lg={{ span: 10 }}>
+            <div className="bg-[#011D41] py-16 px-5 md:px-20 rounded-br-[6rem] h-full flex items-center justify-center">
               <div>
-                <BulbOutlined className="text-[5rem] text-yellow-500 text-center" />
-                <h1 className="text-gray-200">See What Our Top Donor Says</h1>
+                <div className="flex justify-center mb-10">
+                  <BulbOutlined className="text-[5rem] text-yellow-500 text-center" />
+                </div>
+                <h1
+                  className="text-gray-200 text-center tracking-wide"
+                  style={{ lineHeight: "3.5rem" }}
+                >
+                  See What Our Top Donor Says About Our Platform
+                </h1>
               </div>
             </div>
           </Col>
           {/* review side */}
-          <Col span={14} className="h-full flex justify-center items-center ">
+          <Col
+            xs={{ span: 24 }}
+            lg={{ span: 14 }}
+            className="h-full flex justify-center items-center py-20 px-5"
+          >
             {/* carousel */}
             {testimonial.length > 0 && (
               <Carousel
                 autoPlay
                 autoFocus
-                interval={400}
+                interval={4000}
+                infiniteLoop
                 showThumbs={false}
-                className="max-w-md"
+                className="w-full"
               >
                 {testimonial.map((item) => (
-                  <div key={item.id} className="max-w-md space-y-5 text-center">
+                  <div
+                    key={item.id}
+                    className="max-w-md mx-auto space-y-5 text-center"
+                  >
                     <h2 className="text-center">{item.title}</h2>
                     <p className="text-gray-600 text-justify">
                       {item.description}

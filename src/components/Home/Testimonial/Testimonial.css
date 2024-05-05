@@ -1,0 +1,8 @@
+/* Hide dots and status */
+.carousel-root .control-dots {
+  display: none !important;
+}
+
+.carousel-root .carousel-status {
+  display: none !important;
+}
