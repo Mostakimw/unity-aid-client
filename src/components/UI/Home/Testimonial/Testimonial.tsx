@@ -1,10 +1,10 @@
 import "./Testimonial.css";
 import { Col, Row } from "antd";
-import Container from "../../Container/Container";
 import { useEffect, useState } from "react";
 import { BulbOutlined } from "@ant-design/icons";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import Container from "../../../reusable/Container/Container";
 
 interface TTestimonial {
   id: string;

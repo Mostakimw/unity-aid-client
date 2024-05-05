@@ -1,8 +1,8 @@
 import { Button, Col, Row } from "antd";
-import UAForm from "../../components/form/UAForm";
-import UAInput from "../../components/form/UAInput";
 import { FieldValues } from "react-hook-form";
 import { useAddUserMutation } from "../../redux/features/auth/authApi";
+import UAForm from "../../components/reusable/form/UAForm";
+import UAInput from "../../components/reusable/form/UAInput";
 
 const Register = () => {
   const [createUser, { error }] = useAddUserMutation(undefined);

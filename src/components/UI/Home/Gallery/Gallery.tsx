@@ -1,10 +1,10 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import Container from "../../Container/Container";
 import "./Gallery.css";
 import { GalleryCard, MobileGalleryCard } from "./GalleryCard";
 import { useMediaQuery } from "react-responsive";
-import SectionTitle from "../../reusable/SectionTitle/SectionTitle";
+import Container from "../../../reusable/Container/Container";
+import SectionTitle from "../../../reusable/SectionTitle/SectionTitle";
 
 const imageUrls = [
   [

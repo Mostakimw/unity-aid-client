@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import Container from "../../reusable/Container/Container";
-import { TDonation } from "../../../types";
-import SectionTitle from "../../reusable/SectionTitle/SectionTitle";
 import { Button, Card, Col, Row } from "antd";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Container from "../../../reusable/Container/Container";
+import SectionTitle from "../../../reusable/SectionTitle/SectionTitle";
+import { TDonation } from "../../../../types";
 
 const DonationSection = () => {
   const [data, setData] = useState<TDonation[]>([]);

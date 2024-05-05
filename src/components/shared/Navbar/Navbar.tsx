@@ -50,7 +50,7 @@ const Navbar = () => {
               items={items}
               onClick={handleMenuClick}
               mode="horizontal"
-              defaultSelectedKeys={["3"]}
+              defaultSelectedKeys={["1"]}
               style={{ flex: 1, minWidth: 0, backgroundColor: "#fff" }}
             />
           </div>
