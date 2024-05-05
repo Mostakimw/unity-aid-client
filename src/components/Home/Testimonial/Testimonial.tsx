@@ -1,52 +1,85 @@
-import { Col, Row, Space } from "antd";
+import "./Testimonial.css";
+import { Col, Row } from "antd";
 import Container from "../../Container/Container";
-import SectionTitle from "../../reusable/SectionTitle/SectionTitle";
+import { useEffect, useState } from "react";
+import { BulbOutlined } from "@ant-design/icons";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
+
+interface TTestimonial {
+  id: string;
+  title: string;
+  description: string;
+  name: string;
+  designation: string;
+}
 
 const Testimonial = () => {
+  const [testimonial, setTestimonial] = useState<TTestimonial[]>([]);
+  useEffect(() => {
+    fetch("testimonial.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setTestimonial(data);
+      });
+  }, []);
   return (
-    <Container style={{ marginTop: 50 }}>
-      <SectionTitle>Testimonial</SectionTitle>
-      <Row
-        style={{ marginTop: 30, height: 550 }}
-        gutter={35}
-        className="shadow-xl rounded-md"
-      >
-        {/* title side */}
-        <Col span={10}>
-          <div className="bg-blue-500 py-24 px-8 rounded-br-[6rem]">
-            <h1 className="text-gray-200">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
-              nihil.
-            </h1>
-          </div>
-        </Col>
-        {/* review side */}
-        <Col span={14}>
-          <Space
-            size={20}
-            direction="vertical"
-            align="center"
-            className="h-full max-w-md justify-center"
+    <Container style={{ marginTop: 112 }}>
+      {/* <SectionTitle>Testimonial</SectionTitle> */}
+      <div className="shadow-xl rounded-md h-fit lg:h-[550px] ">
+        <Row style={{ marginTop: 30 }} className="lg:h-[470px]">
+          {/* title side */}
+          <Col xs={{ span: 24 }} lg={{ span: 10 }}>
+            <div className="bg-[#011D41] py-16 px-5 md:px-20 rounded-br-[6rem] h-full flex items-center justify-center">
+              <div>
+                <div className="flex justify-center mb-10">
+                  <BulbOutlined className="text-[5rem] text-yellow-500 text-center" />
+                </div>
+                <h1
+                  className="text-gray-200 text-center tracking-wide"
+                  style={{ lineHeight: "3.5rem" }}
+                >
+                  See What Our Top Donor Says About Our Platform
+                </h1>
+              </div>
+            </div>
+          </Col>
+          {/* review side */}
+          <Col
+            xs={{ span: 24 }}
+            lg={{ span: 14 }}
+            className="h-full flex justify-center items-center py-20 px-5"
           >
-            <h2 className="text-center">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Perspiciatis, aperiam?
-            </h2>
-            <p className="text-gray-600 text-justify">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id
-              sapiente unde repellat alias similique illo, fugiat eaque a
-              possimus incidunt pariatur quis quaerat, inventore explicabo
-              voluptatum cupiditate rerum neque accusamus ullam. Perspiciatis
-              ipsam nisi expedita tenetur fugiat! Laboriosam explicabo
-              distinctio libero autem aliquam, similique officia.
-            </p>
-            <Space direction="vertical" align="center">
-              <h5>John Dow</h5>
-              <p>Web developer</p>
-            </Space>
-          </Space>
-        </Col>
-      </Row>
+            {/* carousel */}
+            {testimonial.length > 0 && (
+              <Carousel
+                autoPlay
+                autoFocus
+                interval={4000}
+                infiniteLoop
+                showThumbs={false}
+                className="w-full"
+              >
+                {testimonial.map((item) => (
+                  <div
+                    key={item.id}
+                    className="max-w-md mx-auto space-y-5 text-center"
+                  >
+                    <h2 className="text-center">{item.title}</h2>
+                    <p className="text-gray-600 text-justify">
+                      {item.description}
+                    </p>
+                    <div className="space-y-2">
+                      <h5>{item.name}</h5>
+                      <p className="text-gray-900">{item.designation}</p>
+                    </div>
+                  </div>
+                ))}
+              </Carousel>
+            )}
+          </Col>
+        </Row>
+      </div>
     </Container>
   );
 };

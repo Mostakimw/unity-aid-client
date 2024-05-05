@@ -5,6 +5,7 @@ import Register from "../pages/Register/Register";
 import Authentication from "../pages/Authentication/Authentication";
 import About from "../pages/About/About";
 import Homepage from "../pages/Homepage/Homepage";
+// import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const router = createBrowserRouter([
   {

@@ -19,6 +19,5 @@
 
 .banner h1, p {
   position: relative;
-  color: white;
   z-index: 2;
 }
