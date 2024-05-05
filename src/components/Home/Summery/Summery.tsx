@@ -4,7 +4,7 @@ import donation from "./../../../assets/summery2.svg";
 const Summery = () => {
   return (
     <div
-      className="summery h-80 md:h-[calc(100vh-200px)] mt-28"
+      className="summery  md:h-[calc(100vh-200px)] mt-28 bg-red-500"
       style={{
         backgroundImage: `url(${summeryImg})`,
         backgroundRepeat: "no-repeat",
@@ -13,7 +13,7 @@ const Summery = () => {
         position: "sticky",
       }}
     >
-      <div className="mx-auto py-8 px-4 h-full grid grid-cols-1 md:grid-cols-2 justify-items-center place-items-center">
+      <div className="mx-auto py-8 px-4 h-full grid grid-cols-1 gap-5 md:grid-cols-2 justify-items-center place-items-center">
         <div className="">
           <div className="max-w-md space-y-4">
             <h1>Nice to meet you</h1>
