@@ -1,13 +1,21 @@
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Carousel } from "react-responsive-carousel";
-import { Col, Row, Space } from "antd";
+import { Col, Row } from "antd";
 import Container from "../../Container/Container";
 import SectionTitle from "../../reusable/SectionTitle/SectionTitle";
 import { useEffect, useState } from "react";
 import { BulbOutlined } from "@ant-design/icons";
 
+interface TTestimonial {
+  id: string;
+  title: string;
+  description: string;
+  name: string;
+  designation: string;
+}
+
 const Testimonial = () => {
-  const [testimonial, setTestimonial] = useState([]);
+  const [testimonial, setTestimonial] = useState<TTestimonial[]>([]);
   useEffect(() => {
     fetch("testimonial.json")
       .then((res) => res.json())
@@ -31,6 +39,7 @@ const Testimonial = () => {
           </Col>
           {/* review side */}
           <Col span={14} className="h-full flex justify-center items-center ">
+            {/* carousel */}
             {testimonial.length > 0 && (
               <Carousel
                 autoPlay
@@ -46,7 +55,7 @@ const Testimonial = () => {
                       {item.description}
                     </p>
                     <div className="space-y-2">
-                      <h5>John Dow</h5>
+                      <h5>{item.name}</h5>
                       <p className="text-gray-900">{item.designation}</p>
                     </div>
                   </div>
