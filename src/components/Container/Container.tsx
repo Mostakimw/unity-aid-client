@@ -10,7 +10,14 @@ const Container = ({
   style?: CSSProperties;
 }) => {
   return (
-    <div style={{ maxWidth: "1280px", margin: "0 auto", ...style }}>
+    <div
+      style={{
+        maxWidth: "1280px",
+        padding: "0 20px",
+        margin: "0 auto",
+        ...style,
+      }}
+    >
       {children}
     </div>
   );
