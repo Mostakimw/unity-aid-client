@@ -1,4 +1,5 @@
 import Banner from "../../components/Home/Banner/Banner";
+import DonationSection from "../../components/Home/DonationSection/DonationSection";
 import Gallery from "../../components/Home/Gallery/Gallery";
 import Summery from "../../components/Home/Summery/Summery";
 import Testimonial from "../../components/Home/Testimonial/Testimonial";
@@ -9,7 +10,8 @@ const Homepage = () => {
       <Banner />
       {/* <Testimonial />
       <Summery /> */}
-      <Gallery />
+      {/* <Gallery /> */}
+      <DonationSection />
     </div>
   );
 };
