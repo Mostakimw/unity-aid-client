@@ -7,6 +7,9 @@ import About from "../pages/About/About";
 import Homepage from "../pages/Homepage/Homepage";
 import Donation from "../pages/Donation/AllDonation/AllDonation";
 import DonationDetails from "../pages/Donation/DonationDetails/DonationDetails";
+import Dashboard from "../pages/dashboard/Dashboard/Dashboard";
+import DashboardLayout from "../components/layout/DashboardLayout";
+import Sidebar from "../components/layout/Sider/Sidebar";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +21,11 @@ const router = createBrowserRouter([
       { path: "donations", element: <Donation /> },
       { path: "donations/:id", element: <DonationDetails /> },
     ],
+  },
+  {
+    path: "/dashboard",
+    element: <Sidebar />,
+    children: [{ index: true, element: <Dashboard /> }],
   },
   {
     path: "/account",
