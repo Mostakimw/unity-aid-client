@@ -1,11 +1,11 @@
 import { Button, Col, Row } from "antd";
-import UAForm from "../../components/form/UAForm";
-import UAInput from "../../components/form/UAInput";
 import { FieldValues } from "react-hook-form";
 import { useLoginUserMutation } from "../../redux/features/auth/authApi";
 import { useAppDispatch } from "../../redux/hooks";
 import { verifyToken } from "../../utils/verifyToken";
 import { setUser } from "../../redux/features/auth/authSlice";
+import UAForm from "../../components/reusable/form/UAForm";
+import UAInput from "../../components/reusable/form/UAInput";
 // import { UAButton } from "../components/button/Button";
 
 const Login = () => {

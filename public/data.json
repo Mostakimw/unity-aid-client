@@ -1,0 +1,68 @@
+[
+  {
+    "donationId": "1",
+    "image": "https://img.freepik.com/free-photo/close-up-people-holding-apples-bag_23-2149182018.jpg?t=st=1714916979~exp=1714920579~hmac=8e3394c183ee81e58b13c001782130008f2b2156280cdeb06bde0c9284bc9f00&w=1380",
+    "title": "Emergency Food Relief",
+    "category": "Food",
+    "amount": 500,
+    "description": "Help us provide nutritious meals to families affected by natural disasters.",
+    "timestamp": "2024-05-05T12:00:00Z",
+    "isDeleted": false,
+    "totalReceived": 0
+  },
+  {
+    "donationId": "2",
+    "image": "https://img.freepik.com/free-photo/volunteers-holding-boxes-containing-donations-charity_23-2149230563.jpg?t=st=1714917004~exp=1714920604~hmac=795f066537e5f922542457901da153250c59faa87955891795200510b27c80c3&w=1380",
+    "title": "Warm Clothing Drive",
+    "category": "Clothing",
+    "amount": 300,
+    "description": "Support our effort to provide warm clothing to homeless individuals during the winter season.",
+    "timestamp": "2024-04-20T08:30:00Z",
+    "isDeleted": false,
+    "totalReceived": 0
+  },
+  {
+    "donationId": "3",
+    "image": "https://img.freepik.com/premium-photo/group-young-african-american-volunteers-helping-people-charity-center_839833-3177.jpg?w=1380",
+    "title": "Shelter Renovation Project",
+    "category": "Shelter",
+    "amount": 1000,
+    "description": "Help us renovate shelters for families in need of a safe and secure place to stay.",
+    "timestamp": "2024-03-15T16:45:00Z",
+    "isDeleted": false,
+    "totalReceived": 0
+  },
+  {
+    "donationId": "4",
+    "image": "https://img.freepik.com/free-photo/close-up-people-holding-apples-bag_23-2149182018.jpg?t=st=1714916979~exp=1714920579~hmac=8e3394c183ee81e58b13c001782130008f2b2156280cdeb06bde0c9284bc9f00&w=1380",
+    "title": "Medical Supplies for Rural Clinics",
+    "category": "Healthcare",
+    "amount": 750,
+    "description": "Support our initiative to provide essential medical supplies to rural healthcare clinics.",
+    "timestamp": "2024-05-02T10:15:00Z",
+    "isDeleted": false,
+    "totalReceived": 0
+  },
+  {
+    "donationId": "5",
+    "image": "https://img.freepik.com/free-photo/volunteers-holding-boxes-containing-donations-charity_23-2149230563.jpg?t=st=1714917004~exp=1714920604~hmac=795f066537e5f922542457901da153250c59faa87955891795200510b27c80c3&w=1380",
+    "title": "Educational Scholarships",
+    "category": "Education",
+    "amount": 1200,
+    "description": "Help underprivileged students pursue their education by providing scholarships.",
+    "timestamp": "2024-04-10T14:20:00Z",
+    "isDeleted": false,
+    "totalReceived": 0
+  },
+  {
+    "donationId": "6",
+    "image": "https://img.freepik.com/premium-photo/group-young-african-american-volunteers-helping-people-charity-center_839833-3177.jpg?w=1380",
+    "title": "Clean Water Initiative",
+    "category": "Water",
+    "amount": 600,
+    "description": "Support our efforts to provide clean and safe drinking water to communities in need.",
+    "timestamp": "2024-03-28T11:30:00Z",
+    "isDeleted": false,
+    "totalReceived": 0
+  }
+]

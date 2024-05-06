@@ -1,5 +1,5 @@
-import summeryImg from "./../../../assets/summery.svg";
-import donation from "./../../../assets/summery2.svg";
+import summeryImg from "./../../../../assets/summery.svg";
+import donation from "./../../../../assets/summery2.svg";
 
 const Summery = () => {
   return (

@@ -1,15 +1,17 @@
-import Banner from "../../components/Home/Banner/Banner";
-import Gallery from "../../components/Home/Gallery/Gallery";
-import Summery from "../../components/Home/Summery/Summery";
-import Testimonial from "../../components/Home/Testimonial/Testimonial";
+import Banner from "../../components/UI/Home/Banner/Banner";
+import DonationSection from "../../components/UI/Home/DonationSection/DonationSection";
+import Gallery from "../../components/UI/Home/Gallery/Gallery";
+import Summery from "../../components/UI/Home/Summery/Summery";
+import Testimonial from "../../components/UI/Home/Testimonial/Testimonial";
 
 const Homepage = () => {
   return (
-    <div style={{ marginTop: 70, marginBottom: 200 }}>
+    <div style={{ marginTop: 70 }}>
       <Banner />
-      {/* <Testimonial />
-      <Summery /> */}
+      <DonationSection />
+      <Summery />
       <Gallery />
+      <Testimonial />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { Button } from "antd";
-import Container from "../../Container/Container";
 import "./Banner.css";
+import Container from "../../../reusable/Container/Container";
 
 const Banner = () => {
   return (
