@@ -13,12 +13,18 @@ type TFormProps = {
 };
 
 const UAForm = ({ children, onSubmit }: TFormProps) => {
-
   const methods = useForm();
+
+  const submit: SubmitHandler<FieldValues> = (data) => {
+    onSubmit(data);
+    methods.reset();
+  };
 
   return (
     <FormProvider {...methods}>
-      <Form layout="vertical" onFinish={methods.handleSubmit(onSubmit)}>{children}</Form>
+      <Form layout="vertical" onFinish={methods.handleSubmit(submit)}>
+        {children}
+      </Form>
     </FormProvider>
   );
 };

@@ -1,13 +1,19 @@
 import { Layout, Menu, theme } from "antd";
-import { NavLink, useLocation } from "react-router-dom";
-import DashboardLayout from "../DashboardLayout";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
 
 const { Header, Content, Sider } = Layout;
 
+// ! sidebar menu items
 const items = [
   { label: <NavLink to="/dashboard">Dashboard</NavLink>, key: 1 },
-  { label: <NavLink to="/create-donation">Create Donation</NavLink>, key: 2 },
-  { label: <NavLink to="/all-donation-post">Donation Posts</NavLink>, key: 3 },
+  {
+    label: <NavLink to="/dashboard/create-donation">Create Donation</NavLink>,
+    key: 2,
+  },
+  {
+    label: <NavLink to="/dashboard/donations">Donation Posts</NavLink>,
+    key: 3,
+  },
 ];
 
 const Sidebar = () => {
@@ -15,11 +21,11 @@ const Sidebar = () => {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
 
+  // selecting menu item key
   const location = useLocation();
   const selectedKey = items.find(
     (item) => item.label.props.to === location.pathname
   )?.key;
-  console.log(selectedKey);
 
   return (
     <Layout>
@@ -54,7 +60,8 @@ const Sidebar = () => {
               borderRadius: borderRadiusLG,
             }}
           >
-            <DashboardLayout />
+            {/* rendering all dashboard content here */}
+            <Outlet />
           </div>
         </Content>
       </Layout>

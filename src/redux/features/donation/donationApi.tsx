@@ -10,7 +10,7 @@ const donationApi = baseApi.injectEndpoints({
     }),
     addDonationPost: builder.mutation({
       query: (data) => ({
-        url: "/donations",
+        url: "/donations/create",
         method: "POST",
         body: data,
       }),
