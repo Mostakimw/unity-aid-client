@@ -1,60 +1,26 @@
-import { Button, Card, Col, Row } from "antd";
-import { useEffect, useState } from "react";
+import { Button, Row } from "antd";
 import { Link } from "react-router-dom";
 import Container from "../../../reusable/Container/Container";
 import SectionTitle from "../../../reusable/SectionTitle/SectionTitle";
+import { useGetAllDonationPostQuery } from "../../../../redux/features/donation/donationApi";
+import DonationPostCard from "./DonationPostCard";
 import { TDonation } from "../../../../types";
 
 const DonationSection = () => {
-  const [data, setData] = useState<TDonation[]>([]);
-  useEffect(() => {
-    fetch("data.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-      });
-  }, []);
+  const { data: donationPosts, isFetching } =
+    useGetAllDonationPostQuery(undefined);
+  console.log(donationPosts);
+
+  if (isFetching) {
+    return <>Loading...</>;
+  }
   return (
     <Container style={{ marginTop: 112 }}>
       <SectionTitle>Donation Posts</SectionTitle>
       <div className="mt-16">
         <Row gutter={24}>
-          {data.map((item) => (
-            <Col
-              key={item.donationId}
-              span={24}
-              md={{ span: 12 }}
-              lg={{ span: 8 }}
-              className="w-full  gutter-row mb-8"
-            >
-              <Card
-                hoverable
-                cover={
-                  <img
-                    title={item.title}
-                    alt="example"
-                    src={item.image}
-                    className="w-full h-96  object-cover bg-[#FEE3BD]"
-                  />
-                }
-              >
-                <div className="flex gap-4 justify-between">
-                  <p className="text-2xl font-bold truncate">{item.title}</p>
-                  <p className="mt-[5px] ">#{item.category}</p>
-                </div>
-                <div className="flex justify-between items-center mt-4">
-                  <h3>
-                    Amount:{" "}
-                    <span className="text-[#0C6051] font-light ">
-                      ${item.amount}
-                    </span>
-                  </h3>
-                  <Button type="primary" shape="round">
-                    Details
-                  </Button>
-                </div>
-              </Card>
-            </Col>
+          {donationPosts?.data?.map((item: TDonation) => (
+            <DonationPostCard key={item._id} item={item} />
           ))}
         </Row>
         <div className="flex justify-center mt-4">
