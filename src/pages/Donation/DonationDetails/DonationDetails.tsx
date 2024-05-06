@@ -63,7 +63,7 @@ const DonationDetails = () => {
               )}
             </div>
             <Row justify="center">
-              <div className="space-x-4">
+              <div className="space-x-1 md:space-x-4 flex  flex-wrap justify-center items-center px-5">
                 <button
                   className="amount-btn w-16 h-16"
                   onClick={() => handleButtonClick(25)}
