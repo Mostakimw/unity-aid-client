@@ -4,6 +4,8 @@ import UAInput from "../../../components/reusable/form/UAInput";
 import { Controller, FieldValues, SubmitHandler } from "react-hook-form";
 import { useAddDonationPostMutation } from "../../../redux/features/donation/donationApi";
 import { toast } from "sonner";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { createDonationSchema } from "../../../schema/donation/donation.schema";
 
 const CreateDonationPost = () => {
   const [createPost] = useAddDonationPostMutation(undefined);
@@ -39,7 +41,7 @@ const CreateDonationPost = () => {
       <p className="text-center text-2xl font-semibold font-mono mb-6">
         Create Donation Post
       </p>
-      <UAForm onSubmit={onSubmit}>
+      <UAForm onSubmit={onSubmit} resolver={zodResolver(createDonationSchema)}>
         <Row gutter={20}>
           <Col span={24} md={{ span: 12 }}>
             <UAInput
@@ -80,9 +82,12 @@ const CreateDonationPost = () => {
           <Col span={24} md={{ span: 12 }}>
             <Controller
               name="description"
-              render={({ field }) => (
+              render={({ field, fieldState: { error } }) => (
                 <Form.Item label="Description">
                   <Input.TextArea {...field} placeholder="Write Details" />
+                  {error && (
+                    <small className="text-red-500">{error.message}</small>
+                  )}
                 </Form.Item>
               )}
             />

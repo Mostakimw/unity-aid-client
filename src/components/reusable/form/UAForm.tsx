@@ -6,14 +6,19 @@ import {
   SubmitHandler,
   useForm,
 } from "react-hook-form";
+import { z } from "zod";
+import { createDonationSchema } from "../../../schema/donation/donation.schema";
 
 type TFormProps = {
   children: ReactNode;
   onSubmit: SubmitHandler<FieldValues>;
+  resolver?: any;
 };
 
-const UAForm = ({ children, onSubmit }: TFormProps) => {
-  const methods = useForm();
+type TCreateDonationSchema = z.infer<typeof createDonationSchema>
+
+const UAForm = ({ children, onSubmit, resolver }: TFormProps) => {
+  const methods = useForm<TCreateDonationSchema>({resolver});
 
   const submit: SubmitHandler<FieldValues> = (data) => {
     onSubmit(data);

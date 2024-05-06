@@ -13,9 +13,10 @@ const UAInput = ({ name, type, label, placeholder }: TInputProps) => {
     <div>
       <Controller
         name={name}
-        render={({ field }) => (
+        render={({ field, fieldState: { error } }) => (
           <Form.Item label={label}>
             <Input {...field} type={type} placeholder={placeholder} />
+            {error && <small className="text-red-500">{error.message}</small>}
           </Form.Item>
         )}
       />
