@@ -5,7 +5,7 @@ import Register from "../pages/Register/Register";
 import Authentication from "../pages/Authentication/Authentication";
 import About from "../pages/About/About";
 import Homepage from "../pages/Homepage/Homepage";
-// import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Donation from "../pages/Donation/Donation";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +14,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Homepage /> },
       { path: "about", element: <About /> },
+      { path: "all-donations", element: <Donation /> },
     ],
   },
   {

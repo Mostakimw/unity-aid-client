@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, Button, Layout, Drawer } from "antd";
 import { MenuOutlined, UserOutlined } from "@ant-design/icons";
 import "./Navbar.css";
@@ -7,25 +7,15 @@ import "./Navbar.css";
 const { Header } = Layout;
 
 const items = [
-  { label: "Home", key: 1, target: "/" },
-  { label: "All Donations", key: 2, target: "/donations" },
-  { label: "Dashboard", key: 3, target: "/about" },
-  { label: "About", key: 4, target: "/about" },
+  { label: <NavLink to="/">Home</NavLink>, key: 1 },
+  { label: <NavLink to="/all-donations">All Donations</NavLink>, key: 2 },
+  { label: <NavLink to="/about">About</NavLink>, key: 3 },
+  { label: <NavLink to="/dashboard">Dashboard</NavLink>, key: 4 },
 ];
 
 const Navbar = () => {
+  const location = useLocation();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
-  //! handling menu changing
-  const navigate = useNavigate();
-
-  const handleMenuClick = ({ key }: { key: string }) => {
-    const keyString = parseInt(key);
-    const { target } = items.find((item) => item.key == keyString) || {};
-    if (target) {
-      navigate(target);
-    }
-  };
 
   const showDrawer = () => {
     setIsDrawerOpen(true);
@@ -34,6 +24,10 @@ const Navbar = () => {
   const onCloseDrawer = () => {
     setIsDrawerOpen(false);
   };
+
+  const selectedKey = items.find(
+    (item) => item.label.props.to == location.pathname
+  )?.key;
 
   return (
     <Layout>
@@ -48,11 +42,14 @@ const Navbar = () => {
           <div className="menu-items">
             <Menu
               items={items}
-              onClick={handleMenuClick}
               mode="horizontal"
-              defaultSelectedKeys={["1"]}
+              defaultSelectedKeys={[selectedKey ? selectedKey.toString() : "1"]}
               style={{ flex: 1, minWidth: 0, backgroundColor: "#fff" }}
-            />
+            >
+              {/* <p className="text-gray-700">
+                <Link to="/">Home</Link>
+              </p> */}
+            </Menu>
           </div>
 
           <Button type="primary" onClick={showDrawer} className="menu-toggle">
@@ -77,8 +74,7 @@ const Navbar = () => {
           theme="dark"
           mode="vertical"
           items={items}
-          onClick={handleMenuClick}
-          defaultSelectedKeys={["1"]}
+          defaultSelectedKeys={[selectedKey ? selectedKey.toString() : "1"]}
         />
       </Drawer>
     </Layout>
