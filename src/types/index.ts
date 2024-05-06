@@ -1,5 +1,5 @@
 export type TDonation = {
-  donationId: string;
+  _id: string;
   image: string;
   title: string;
   category: string;
