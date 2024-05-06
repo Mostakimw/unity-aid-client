@@ -22,3 +22,15 @@
   color: #fff !important;
   line-height: 1.5rem;
 }
+
+.text-theme {
+  @apply text-[#cf2420];
+}
+
+.bg-theme {
+  @apply bg-[#cf2420];
+}
+
+.amount-btn {
+  @apply text-base rounded-full font-semibold bg-theme border-none text-white transition-all hover:opacity-80 hover:cursor-pointer;
+}

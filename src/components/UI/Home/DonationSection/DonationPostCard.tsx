@@ -1,5 +1,6 @@
 import { Button, Card, Col } from "antd";
 import { TDonation } from "../../../../types";
+import { Link } from "react-router-dom";
 
 const DonationPostCard = ({ item }: { item: TDonation }) => {
   return (
@@ -7,7 +8,7 @@ const DonationPostCard = ({ item }: { item: TDonation }) => {
       span={24}
       md={{ span: 12 }}
       lg={{ span: 8 }}
-      className="w-full  gutter-row mb-8"
+      className="w-full gutter-row mb-8"
     >
       <Card
         hoverable
@@ -30,7 +31,7 @@ const DonationPostCard = ({ item }: { item: TDonation }) => {
             <span className="text-[#0C6051] font-light ">${item.amount}</span>
           </h3>
           <Button type="primary" shape="round">
-            Details
+            <Link to={`/donations/${item?._id}`}>Details</Link>
           </Button>
         </div>
       </Card>

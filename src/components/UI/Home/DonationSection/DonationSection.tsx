@@ -9,7 +9,6 @@ import { TDonation } from "../../../../types";
 const DonationSection = () => {
   const { data: donationPosts, isFetching } =
     useGetAllDonationPostQuery(undefined);
-  console.log(donationPosts);
 
   if (isFetching) {
     return <>Loading...</>;
