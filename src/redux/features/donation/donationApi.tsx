@@ -25,6 +25,15 @@ const donationApi = baseApi.injectEndpoints({
         body: data,
       }),
     }),
+    deleteSingleDonationPost: builder.mutation({
+      query: (id) => {
+        console.log(id);
+        return {
+          url: `/donations/${id}`,
+          method: "DELETE",
+        };
+      },
+    }),
   }),
 });
 
@@ -32,4 +41,5 @@ export const {
   useGetAllDonationPostQuery,
   useGetSingleDonationPostQuery,
   useAddDonationPostMutation,
+  useDeleteSingleDonationPostMutation,
 } = donationApi;
