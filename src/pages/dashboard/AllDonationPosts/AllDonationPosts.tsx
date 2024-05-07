@@ -30,6 +30,8 @@ const columns: TableColumnsType<DataType> = [
   },
 ];
 
+// title, category, amount, totalreceived, edit, delete
+
 const data = [
   {
     key: "1",

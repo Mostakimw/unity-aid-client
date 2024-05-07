@@ -16,7 +16,7 @@ const CreateDonationPost = () => {
       image: data.image,
       title: data.title,
       category: data.category,
-      amount: data.amount,
+      amount: parseInt(data.amount),
       description: data.description,
       timestamp: new Date(),
       isDeleted: false,
