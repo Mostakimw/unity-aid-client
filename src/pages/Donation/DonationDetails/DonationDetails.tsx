@@ -15,11 +15,12 @@ import {
 import { useGetSingleDonationPostQuery } from "../../../redux/features/donation/donationApi";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
-import { useAppSelector } from "../../../redux/hooks";
 import { toast } from "sonner";
+import { selectCurrentUser } from "../../../redux/features/auth/authSlice";
+import { useAppSelector } from "../../../redux/hooks";
 
 const DonationDetails = () => {
-  const user = useAppSelector((state) => state?.auth.user);
+  const user = useAppSelector(selectCurrentUser)
   const [open, setOpen] = useState(false);
 
   const params = useParams();

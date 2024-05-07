@@ -3,6 +3,11 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, Button, Layout, Drawer } from "antd";
 import { MenuOutlined, UserOutlined } from "@ant-design/icons";
 import "./Navbar.css";
+import { useAppDispatch, useAppSelector } from "../../../redux/hooks";
+import {
+  logoutUser,
+  selectCurrentUser,
+} from "../../../redux/features/auth/authSlice";
 
 const { Header } = Layout;
 
@@ -14,6 +19,8 @@ const items = [
 ];
 
 const Navbar = () => {
+  const user = useAppSelector(selectCurrentUser);
+  const dispatch = useAppDispatch();
   const location = useLocation();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -28,6 +35,10 @@ const Navbar = () => {
   const selectedKey = items.find(
     (item) => item.label.props.to == location.pathname
   )?.key;
+
+  const handlerLogout = () => {
+    dispatch(logoutUser());
+  };
 
   return (
     <Layout>
@@ -57,9 +68,15 @@ const Navbar = () => {
           </Button>
 
           <div>
-            <Link to="/account/login">
-              <Button type="text" icon={<UserOutlined />} />
-            </Link>
+            {!user ? (
+              <Link to="/account/login">
+                <Button type="text" icon={<UserOutlined />} />
+              </Link>
+            ) : (
+              <Button type="primary" onClick={handlerLogout}>
+                Logout
+              </Button>
+            )}
           </div>
         </div>
       </Header>

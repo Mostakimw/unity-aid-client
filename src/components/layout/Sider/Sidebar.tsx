@@ -1,5 +1,5 @@
 import { Layout, Menu, theme } from "antd";
-import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 
 const { Header, Content, Sider } = Layout;
 
@@ -29,18 +29,11 @@ const Sidebar = () => {
 
   return (
     <Layout>
-      <Sider
-        breakpoint="lg"
-        collapsedWidth="0"
-        // onBreakpoint={(broken) => {
-        //   console.log(broken);
-        // }}
-        // onCollapse={(collapsed, type) => {
-        //   console.log(collapsed, type);
-        // }}
-      >
-        <div className="demo-logo-vertical text-red-500 h-20 text-center text-2xl flex items-center justify-center">
-          <h3>Unity Aid</h3>
+      <Sider breakpoint="lg" collapsedWidth="0">
+        <div className="demo-logo-vertical  h-20 text-center text-2xl flex items-center justify-center">
+          <Link to="/" className="text-red-500">
+            <h3>Unity Aid</h3>
+          </Link>
         </div>
         <Menu
           theme="dark"
