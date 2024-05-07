@@ -34,6 +34,15 @@ const donationApi = baseApi.injectEndpoints({
         };
       },
     }),
+    updateSingleDonationPost: builder.mutation({
+      query: ({ id, data }) => {
+        return {
+          url: `/donations/${id}`,
+          method: "PATCH",
+          body: data,
+        };
+      },
+    }),
   }),
 });
 
@@ -42,4 +51,5 @@ export const {
   useGetSingleDonationPostQuery,
   useAddDonationPostMutation,
   useDeleteSingleDonationPostMutation,
+  useUpdateSingleDonationPostMutation,
 } = donationApi;
