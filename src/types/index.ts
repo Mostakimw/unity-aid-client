@@ -1,3 +1,5 @@
+import { BaseQueryApi } from "@reduxjs/toolkit/query";
+
 export type TDonation = {
   _id: string;
   image: string;
@@ -9,3 +11,11 @@ export type TDonation = {
   isDeleted: boolean;
   totalReceived: number;
 };
+
+export type TResponse<T> = {
+  success: boolean;
+  message: string;
+  data: T;
+};
+
+export type TResponseRedux<T> = BaseQueryApi | TResponse<T>

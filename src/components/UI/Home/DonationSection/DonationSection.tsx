@@ -18,7 +18,7 @@ const DonationSection = () => {
       <SectionTitle>Donation Posts</SectionTitle>
       <div className="mt-16">
         <Row gutter={24}>
-          {donationPosts?.data?.map((item: TDonation) => (
+          {donationPosts?.data?.slice(0,6).map((item: TDonation) => (
             <DonationPostCard key={item._id} item={item} />
           ))}
         </Row>

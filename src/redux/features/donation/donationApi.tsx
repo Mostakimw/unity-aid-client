@@ -1,3 +1,4 @@
+import { TDonation, TResponse } from "../../../types";
 import { baseApi } from "../../api/baseApi";
 
 const donationApi = baseApi.injectEndpoints({
@@ -7,6 +8,15 @@ const donationApi = baseApi.injectEndpoints({
         url: "/donations",
         method: "GET",
       }),
+    }),
+    getSingleDonationPost: builder.query({
+      query: (params) => ({
+        url: `/donations/${params.id}`,
+        method: "GET",
+      }),
+      transformResponse: (res: TResponse<TDonation>) => {
+        return res?.data;
+      },
     }),
     addDonationPost: builder.mutation({
       query: (data) => ({
@@ -18,5 +28,8 @@ const donationApi = baseApi.injectEndpoints({
   }),
 });
 
-export const { useGetAllDonationPostQuery, useAddDonationPostMutation } =
-  donationApi;
+export const {
+  useGetAllDonationPostQuery,
+  useGetSingleDonationPostQuery,
+  useAddDonationPostMutation,
+} = donationApi;

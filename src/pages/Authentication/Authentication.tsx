@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import loginImg from "./../../assets/login.svg";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
+import Container from "../../components/reusable/Container/Container";
 
 const items = [
   { label: "Login", key: "login", children: <Login /> },
@@ -31,7 +32,7 @@ const Authentication = () => {
   };
 
   return (
-    <>
+    <Container>
       <Row
         gutter={80}
         justify="center"
@@ -39,7 +40,7 @@ const Authentication = () => {
         style={{ minHeight: "100vh", padding: 10 }}
       >
         {/* Right side image */}
-        <Col xs={0} sm={12}>
+        <Col xs={0} sm={{ span: 12 }} className="gutter-row">
           <img
             src={loginImg}
             alt="Image"
@@ -47,7 +48,7 @@ const Authentication = () => {
           />
         </Col>
         {/* Left side content */}
-        <Col xs={24} sm={12}>
+        <Col xs={24} sm={{ span: 12 }} className="gutter-row">
           <Row justify="center">
             <Col span={24}>
               <div style={{ height: "400px" }}>
@@ -65,7 +66,7 @@ const Authentication = () => {
           </Row>
         </Col>
       </Row>
-    </>
+    </Container>
   );
 };
 

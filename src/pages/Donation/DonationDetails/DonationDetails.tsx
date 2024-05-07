@@ -1,4 +1,4 @@
-import { Button, Col, Input, Row } from "antd";
+import { Button, Col, Input, Modal, Row } from "antd";
 import Container from "../../../components/reusable/Container/Container";
 import {
   Controller,
@@ -12,23 +12,47 @@ import {
   LinkedinOutlined,
   TwitterOutlined,
 } from "@ant-design/icons";
+import { useGetSingleDonationPostQuery } from "../../../redux/features/donation/donationApi";
+import { useNavigate, useParams } from "react-router-dom";
+import { useState } from "react";
+import { useAppSelector } from "../../../redux/hooks";
+import { toast } from "sonner";
 
 const DonationDetails = () => {
+  const user = useAppSelector((state) => state?.auth.user);
+  const [open, setOpen] = useState(false);
+
+  const params = useParams();
+  const { data: donationData } = useGetSingleDonationPostQuery(params);
+
+  const navigate = useNavigate()
+
   const { control, handleSubmit, setValue, watch } = useForm();
   const selectedAmount = watch("amount");
+
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     console.log(data);
   };
 
+  //! setting watch value by clicking the amounts btn
   const handleButtonClick = (value: number) => {
-    console.log(value);
     setValue("amount", value);
   };
 
-  // const handleInputChange = (e: FieldValues) => {
-  //   setValue("amount", e.target.value);
-  // };
+  const showModal = () => {
+    setOpen(true);
+  };
+  const handleOk = () => {
+    navigate("/dashboard")
+    toast.success("Donation Completed")
+    // model closing
+    setOpen(false);
+  };
+
+  const handleCancel = () => {
+    setOpen(false);
+  };
 
   return (
     <div style={{ marginTop: 70 }}>
@@ -40,6 +64,7 @@ const DonationDetails = () => {
         />
       </div>
       <Container style={{ marginTop: 30 }}>
+        {/* social media */}
         <Row justify="end" className="mb-6">
           <Col>
             <div className="flex items-center gap-4">
@@ -53,6 +78,7 @@ const DonationDetails = () => {
             </div>
           </Col>
         </Row>
+        {/* donation section start */}
         <div className="bg-[#FEE3BD] py-20 rounded-md">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="text-center pb-4">
@@ -120,13 +146,35 @@ const DonationDetails = () => {
             </div>
             <div className="flex justify-center">
               {selectedAmount && (
-                <Button htmlType="submit" type="primary" size="large">
+                <Button
+                  htmlType="submit"
+                  type="primary"
+                  size="large"
+                  onClick={showModal}
+                >
                   Donate
                 </Button>
               )}
             </div>
           </form>
+          <Modal
+            title="Recheck before confirm"
+            open={open}
+            onCancel={handleCancel}
+            onOk={handleOk}
+          >
+            <div className="space-y-2 text-gray-800">
+              <h4>Your email: {user?.email}</h4>
+              <p>
+                You are donating: ${selectedAmount} for{" "}
+                <span className="font-semibold">{donationData?.title}</span>
+              </p>
+              <p>If all okay, Please click on ok button.</p>
+            </div>
+          </Modal>
         </div>
+
+        {/* description section */}
         <div className="mt-10 text-gray-800 space-y-2 text-center">
           <h2>Donation Description</h2>
           <h4 className="font-mono font-light">
