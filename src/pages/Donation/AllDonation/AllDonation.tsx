@@ -4,9 +4,19 @@ import { useGetAllDonationPostQuery } from "../../../redux/features/donation/don
 import { TDonation } from "../../../types";
 import Container from "../../../components/reusable/Container/Container";
 import DonationPostCard from "../../../components/UI/Home/DonationSection/DonationPostCard";
+import Loader from "../../../components/reusable/loader/Loader";
 
 const Donation = () => {
-  const { data: donationPosts } = useGetAllDonationPostQuery(undefined);
+  const { data: donationPosts, isFetching } =
+    useGetAllDonationPostQuery(undefined);
+
+  if (isFetching) {
+    return (
+      
+        <Loader />
+      
+    );
+  }
 
   return (
     <div style={{ marginTop: 70 }}>
