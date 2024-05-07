@@ -5,19 +5,33 @@ import { Controller, FieldValues, SubmitHandler } from "react-hook-form";
 import { toast } from "sonner";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useUpdateSingleDonationPostMutation } from "../../../redux/features/donation/donationApi";
+import { useNavigate } from "react-router-dom";
+import { Dispatch, SetStateAction } from "react";
+import { createDonationSchema } from "../../../schema/donation/donation.schema";
 
-const UpdateDonationPost = ({ id }: {id: null}) => {
-  const [updatePost] =
-    useUpdateSingleDonationPostMutation(undefined);
+const UpdateDonationPost = ({
+  id,
+  setOpen,
+}: {
+  id: null;
+  setOpen: Dispatch<SetStateAction<boolean>>;
+}) => {
+  const [updatePost] = useUpdateSingleDonationPostMutation(undefined);
+  const navigate = useNavigate();
 
+  //! updating post here
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     const res = await updatePost({ id, data }).unwrap();
-    console.log(res);
+    if (res.success) {
+      toast.success("Post Updated");
+      navigate("/dashboard/donations");
+      setOpen(false);
+    }
   };
 
   return (
     <>
-      <UAForm onSubmit={onSubmit}>
+      <UAForm onSubmit={onSubmit} resolver={zodResolver(createDonationSchema)}>
         <Row gutter={20}>
           <Col span={24} md={{ span: 12 }}>
             <UAInput

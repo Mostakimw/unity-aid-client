@@ -8,6 +8,7 @@ const donationApi = baseApi.injectEndpoints({
         url: "/donations",
         method: "GET",
       }),
+      providesTags: ["Posts"]
     }),
     getSingleDonationPost: builder.query({
       query: (params) => ({
@@ -24,6 +25,7 @@ const donationApi = baseApi.injectEndpoints({
         method: "POST",
         body: data,
       }),
+      invalidatesTags: ["Posts"]
     }),
     deleteSingleDonationPost: builder.mutation({
       query: (id) => {
@@ -33,6 +35,7 @@ const donationApi = baseApi.injectEndpoints({
           method: "DELETE",
         };
       },
+      invalidatesTags: ["Posts"]
     }),
     updateSingleDonationPost: builder.mutation({
       query: ({ id, data }) => {
@@ -42,6 +45,7 @@ const donationApi = baseApi.injectEndpoints({
           body: data,
         };
       },
+      invalidatesTags: ["Posts"]
     }),
   }),
 });

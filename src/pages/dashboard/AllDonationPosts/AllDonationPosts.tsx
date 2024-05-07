@@ -26,7 +26,7 @@ interface DataType {
 const AllDonationPosts = () => {
   const { data: donationData } = useGetAllDonationPostQuery(undefined);
   const [deleteData] = useDeleteSingleDonationPostMutation(undefined);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(false);
   const [currentId, setCurrentId] = useState(null);
 
   //! table data
@@ -53,19 +53,12 @@ const AllDonationPosts = () => {
     setOpen(true);
     setCurrentId(id);
   };
-  const handleOk = () => {
-    // navigate("/dashboard")
-    toast.success("Donation Completed");
-    // model closing
-    setOpen(false);
-  };
+
   const handleCancel = () => {
     setOpen(false);
     setCurrentId(null);
   };
   // ! modal code end
-
-  // ! post update handler
 
   //! column data
   const columns: TableColumnsType<DataType> = [
@@ -97,9 +90,7 @@ const AllDonationPosts = () => {
             >
               <EditOutlined />
             </Button>
-            <Modal open={open} onCancel={handleCancel}>
-              <UpdateDonationPost id={currentId} />
-            </Modal>
+
             <Button
               size="small"
               className="text-red-500"
@@ -121,6 +112,9 @@ const AllDonationPosts = () => {
         pagination={false}
         showSorterTooltip={{ target: "sorter-icon" }}
       />
+      <Modal open={open} onCancel={handleCancel} footer={null}>
+        <UpdateDonationPost id={currentId} setOpen={setOpen} />
+      </Modal>
     </>
   );
 };
