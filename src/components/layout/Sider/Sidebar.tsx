@@ -1,5 +1,6 @@
 import { Layout, Menu, theme } from "antd";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
+import logo from "./../../../assets/donation.png"
 
 const { Header, Content, Sider } = Layout;
 
@@ -32,7 +33,8 @@ const Sidebar = () => {
       <Sider breakpoint="lg" collapsedWidth="0">
         <div className="demo-logo-vertical  h-20 text-center text-2xl flex items-center justify-center">
           <Link to="/" className="text-red-500">
-            <h3>Unity Aid</h3>
+            {/* <h3>Unity Aid</h3> */}
+            <img src={logo} alt="" className="w-12"/>
           </Link>
         </div>
         <Menu

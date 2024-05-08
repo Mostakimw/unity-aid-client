@@ -11,11 +11,7 @@ const Donation = () => {
     useGetAllDonationPostQuery(undefined);
 
   if (isFetching) {
-    return (
-      
-        <Loader />
-      
-    );
+    return <Loader />;
   }
 
   return (
@@ -27,7 +23,7 @@ const Donation = () => {
         </Row>
         <div className="mt-10">
           <Row gutter={24}>
-            {donationPosts.data.map((item: TDonation) => (
+            {donationPosts?.data?.map((item: TDonation) => (
               <DonationPostCard key={item._id} item={item} />
             ))}
           </Row>

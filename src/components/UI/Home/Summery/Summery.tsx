@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const Summery = () => {
   return (
     <div
-      className="summery  md:h-[calc(100vh-200px)] mt-28"
+      className="summery md:h-[calc(100vh-600px)] lg:h-[calc(100vh-200px)] mt-28"
       style={{
         backgroundImage: `url(${summeryImg})`,
         backgroundRepeat: "no-repeat",
@@ -15,18 +15,18 @@ const Summery = () => {
         position: "sticky",
       }}
     >
-      <div className="mx-auto py-8 px-4 h-full grid grid-cols-1 gap-5 md:grid-cols-2 justify-items-center place-items-center">
-        <div>
+      <div className="mx-auto py-8 px-4 h-full  grid grid-cols-1 gap-5 md:grid-cols-2 justify-items-center place-items-center">
+        <div className="">
           {/* text div */}
           <motion.div
-            viewport={{ once: true }}
+            // viewport={{ once: true }}
             variants={summeryText}
             initial="hidden"
             whileInView="visible"
-            className="max-w-md space-y-4"
+            className="space-y-4"
           >
             <h1>Nice to meet you</h1>
-            <p className="text-justify">
+            <p className="text-justify max-w-md">
               Explore who we are and what we stand for. Committed to
               empowerment, innovation, and sustainability, we strive to make a
               positive impact. Join us on a journey of inspiration and
@@ -41,10 +41,11 @@ const Summery = () => {
           variants={summeryImgAni}
           initial="hidden"
           whileInView="visible"
+          className=" py-0 "
         >
           <img
             src={donation}
-            className=" w-full h-[400px] overflow-hidden"
+            className="w-full h-[400px] overflow-hidden"
             alt="donation img"
           />
         </motion.div>
