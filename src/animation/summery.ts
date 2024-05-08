@@ -6,7 +6,7 @@ export const summeryText = {
   },
 };
 export const summeryImgAni = {
-  hidden: { x: 400, opacity: 0 },
+  hidden: { opacity: 0 },
   visible: {
     x: 0,
     opacity: 1,

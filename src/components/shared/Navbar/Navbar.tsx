@@ -85,7 +85,7 @@ const Navbar = () => {
             <MenuOutlined />
           </Button>
 
-          <div>
+          <div className=" flex justify-end">
             {!user ? (
               <Link to="/account/login">
                 <Button type="text" icon={<UserOutlined />} />

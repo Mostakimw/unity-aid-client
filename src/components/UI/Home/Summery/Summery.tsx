@@ -16,7 +16,7 @@ const Summery = () => {
       }}
     >
       <div className="mx-auto py-8 px-4 h-full  grid grid-cols-1 gap-5 md:grid-cols-2 justify-items-center place-items-center">
-        <div className="">
+        <div>
           {/* text div */}
           <motion.div
             // viewport={{ once: true }}
@@ -41,13 +41,9 @@ const Summery = () => {
           variants={summeryImgAni}
           initial="hidden"
           whileInView="visible"
-          className=" py-0 "
+          className="py-0"
         >
-          <img
-            src={donation}
-            className="w-full h-[400px] overflow-hidden"
-            alt="donation img"
-          />
+          <img src={donation} className="w-full h-[400px]" alt="donation img" />
         </motion.div>
       </div>
     </div>
