@@ -2,7 +2,7 @@ import { Button } from "antd";
 import "./Banner.css";
 import Container from "../../../reusable/Container/Container";
 import { motion } from "framer-motion";
-import { banner, bannerChild } from "../../../../animation/Banner";
+import { banner, bannerChild } from "../../../../animation/banner";
 
 const Banner = () => {
   return (

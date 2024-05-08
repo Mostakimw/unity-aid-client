@@ -2,7 +2,7 @@ export const banner = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { duration: 0.5, staggerChildren: 0.5, delayChildren: 1 },
+    transition: { duration: 0.2, staggerChildren: 0.5, delayChildren: 0.8 },
   },
 };
 

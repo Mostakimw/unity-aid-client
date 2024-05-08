@@ -41,8 +41,8 @@ const Login = () => {
   };
 
   return (
-    <Row >
-      <Col span={12}>
+    <Row>
+      <Col xs={{ span: 24 }} lg={{ span: 18 }}>
         <UAForm onSubmit={handleSubmit} resolver={zodResolver(loginUserSchema)}>
           <UAInput
             label="Email:"

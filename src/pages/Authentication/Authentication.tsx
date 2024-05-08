@@ -5,6 +5,8 @@ import loginImg from "./../../assets/login.svg";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
 import Container from "../../components/reusable/Container/Container";
+import { motion } from "framer-motion";
+import { account } from "../../animation/account";
 
 const items = [
   { label: "Login", key: "login", children: <Login /> },
@@ -40,15 +42,25 @@ const Authentication = () => {
         style={{ minHeight: "100vh", padding: 10 }}
       >
         {/* Right side image */}
-        <Col xs={0} sm={{ span: 12 }} className="gutter-row">
-          <img
-            src={loginImg}
-            alt="Image"
-            style={{ width: "100%", height: "100%" }}
-          />
+        <Col
+          xs={{ span: 24, order: 2 }}
+          lg={{ span: 12, order: 1 }}
+          className="gutter-row"
+        >
+          <motion.div variants={account} initial="first" animate="last">
+            <img
+              src={loginImg}
+              alt="Image"
+              style={{ width: "100%", height: "100%" }}
+            />
+          </motion.div>
         </Col>
         {/* Left side content */}
-        <Col xs={24} sm={{ span: 12 }} className="gutter-row">
+        <Col
+          xs={{ span: 24, order: 1 }}
+          lg={{ span: 12, order: 2 }}
+          className="gutter-row"
+        >
           <Row justify="center">
             <Col span={24}>
               <div style={{ height: "400px" }}>

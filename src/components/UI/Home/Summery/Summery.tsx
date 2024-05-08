@@ -1,5 +1,7 @@
+import { summeryImgAni, summeryText } from "../../../../animation/summery";
 import summeryImg from "./../../../../assets/summery.svg";
 import donation from "./../../../../assets/summery2.svg";
+import { motion } from "framer-motion";
 
 const Summery = () => {
   return (
@@ -14,8 +16,15 @@ const Summery = () => {
       }}
     >
       <div className="mx-auto py-8 px-4 h-full grid grid-cols-1 gap-5 md:grid-cols-2 justify-items-center place-items-center">
-        <div className="">
-          <div className="max-w-md space-y-4">
+        <div>
+          {/* text div */}
+          <motion.div
+             viewport={{ once: true }}
+            variants={summeryText}
+            initial="hidden"
+            whileInView="visible"
+            className="max-w-md space-y-4"
+          >
             <h1>Nice to meet you</h1>
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos
@@ -25,15 +34,20 @@ const Summery = () => {
               illo, similique, maiores ipsam quam sequi ab aliquam recusandae.
               Magnam odio molestiae ipsam doloremque.
             </p>
-          </div>
+          </motion.div>
         </div>
-        <div className="">
+        {/* image div */}
+        <motion.div
+          variants={summeryImgAni}
+          initial="hidden"
+          whileInView="visible"
+        >
           <img
             src={donation}
             className=" w-full h-[400px] overflow-hidden"
             alt="donation img"
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

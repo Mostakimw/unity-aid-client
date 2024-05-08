@@ -29,7 +29,7 @@ const Register = () => {
   };
   return (
     <Row>
-      <Col span={12}>
+      <Col xs={{ span: 24 }} lg={{ span: 18 }}>
         <UAForm
           onSubmit={handleSubmit}
           resolver={zodResolver(createUserSchema)}
