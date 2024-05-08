@@ -1,68 +1,92 @@
 [
   {
-    "donationId": "1",
-    "image": "https://img.freepik.com/free-photo/close-up-people-holding-apples-bag_23-2149182018.jpg?t=st=1714916979~exp=1714920579~hmac=8e3394c183ee81e58b13c001782130008f2b2156280cdeb06bde0c9284bc9f00&w=1380",
-    "title": "Emergency Food Relief",
-    "category": "Food",
-    "amount": 500,
-    "description": "Help us provide nutritious meals to families affected by natural disasters.",
-    "timestamp": "2024-05-05T12:00:00Z",
+    "image": "https://www.timeoutdubai.com/cloud/timeoutdubai/2023/11/06/xxm08e431k71b6ypd.jpg",
+    "title": "Gaza Relief Fund",
+    "category": "Humanitarian Aid",
+    "amount": 2000,
+    "description": "Support our Gaza Relief Fund to provide urgent humanitarian aid to the people of Gaza who are facing a dire crisis. The ongoing conflict and economic hardship have led to widespread suffering and deprivation in Gaza. Your contribution will help provide food, medical supplies, shelter, and other essential aid to families affected by the crisis. Together, we can make a difference and bring hope to the people of Gaza during this challenging time.",
+    "timestamp": "2024-05-07T12:00:00Z",
     "isDeleted": false,
-    "totalReceived": 0
+    "totalReceived": 480
   },
   {
-    "donationId": "2",
-    "image": "https://img.freepik.com/free-photo/volunteers-holding-boxes-containing-donations-charity_23-2149230563.jpg?t=st=1714917004~exp=1714920604~hmac=795f066537e5f922542457901da153250c59faa87955891795200510b27c80c3&w=1380",
-    "title": "Warm Clothing Drive",
-    "category": "Clothing",
-    "amount": 300,
-    "description": "Support our effort to provide warm clothing to homeless individuals during the winter season.",
-    "timestamp": "2024-04-20T08:30:00Z",
-    "isDeleted": false,
-    "totalReceived": 0
-  },
-  {
-    "donationId": "3",
-    "image": "https://img.freepik.com/premium-photo/group-young-african-american-volunteers-helping-people-charity-center_839833-3177.jpg?w=1380",
-    "title": "Shelter Renovation Project",
-    "category": "Shelter",
-    "amount": 1000,
-    "description": "Help us renovate shelters for families in need of a safe and secure place to stay.",
-    "timestamp": "2024-03-15T16:45:00Z",
-    "isDeleted": false,
-    "totalReceived": 0
-  },
-  {
-    "donationId": "4",
-    "image": "https://img.freepik.com/free-photo/close-up-people-holding-apples-bag_23-2149182018.jpg?t=st=1714916979~exp=1714920579~hmac=8e3394c183ee81e58b13c001782130008f2b2156280cdeb06bde0c9284bc9f00&w=1380",
-    "title": "Medical Supplies for Rural Clinics",
-    "category": "Healthcare",
-    "amount": 750,
-    "description": "Support our initiative to provide essential medical supplies to rural healthcare clinics.",
-    "timestamp": "2024-05-02T10:15:00Z",
-    "isDeleted": false,
-    "totalReceived": 0
-  },
-  {
-    "donationId": "5",
-    "image": "https://img.freepik.com/free-photo/volunteers-holding-boxes-containing-donations-charity_23-2149230563.jpg?t=st=1714917004~exp=1714920604~hmac=795f066537e5f922542457901da153250c59faa87955891795200510b27c80c3&w=1380",
-    "title": "Educational Scholarships",
-    "category": "Education",
-    "amount": 1200,
-    "description": "Help underprivileged students pursue their education by providing scholarships.",
-    "timestamp": "2024-04-10T14:20:00Z",
-    "isDeleted": false,
-    "totalReceived": 0
-  },
-  {
-    "donationId": "6",
-    "image": "https://img.freepik.com/premium-photo/group-young-african-american-volunteers-helping-people-charity-center_839833-3177.jpg?w=1380",
+    "image": "https://english.news.cn/africa/20220501/6b5318b9c13f492f85d913820c4561d0/202205016b5318b9c13f492f85d913820c4561d0_2022050113c103a7c4074b85a9179114938d67d0.jpg",
     "title": "Clean Water Initiative",
     "category": "Water",
-    "amount": 600,
-    "description": "Support our efforts to provide clean and safe drinking water to communities in need.",
+    "amount": 1500,
+    "description": "Support our efforts to provide clean and safe drinking water to communities in need. Access to clean water is a fundamental human right, yet millions of people worldwide lack access to it. With your help, we aim to change that by implementing sustainable solutions and infrastructure for clean water access. Your contribution will go directly towards water purification systems, well construction, and community education programs. Together, we can make a difference and ensure that everyone has access to clean and safe drinking water.",
     "timestamp": "2024-03-28T11:30:00Z",
     "isDeleted": false,
     "totalReceived": 0
+  },
+  {
+    "image": "https://www.globalgiving.org/pfil/59359/pict_large.jpg",
+    "title": "Sudan Emergency Fund",
+    "category": "Emergency",
+    "amount": 1800,
+    "description": "Help provide urgent humanitarian aid to the people of Sudan who are facing a dire emergency situation. The ongoing crisis in Sudan has led to widespread displacement, food insecurity, and lack of access to basic necessities. Your contribution will support relief efforts such as providing food, clean water, shelter, and medical assistance to those affected by the crisis. Together, we can make a difference and provide hope to the people of Sudan during this challenging time.",
+    "timestamp": "2024-05-07T12:00:00Z",
+    "isDeleted": false,
+    "totalReceived": 350
+  },
+  {
+    "image": "https://ypsa.org/ypsa/wp-content/uploads/2022/01/Outreach-Session-01.jpg",
+    "title": "Education Empowerment Program",
+    "category": "Education",
+    "amount": 1200,
+    "description": "Join us in empowering students through education. Our Education Empowerment Program aims to provide underprivileged students with access to quality education and resources. With your support, we can provide scholarships, educational materials, and mentorship programs to help students achieve their academic goals. By investing in education, we are investing in the future of our communities and creating opportunities for a brighter tomorrow.",
+    "timestamp": "2024-05-07T12:00:00Z",
+    "isDeleted": false,
+    "totalReceived": 450
+  },
+  {
+    "image": "https://markazulmaarif.org/wp-content/uploads/2023/04/WhatsApp-Image-2023-04-26-at-11.45.40-AM.jpeg",
+    "title": "Medical Relief Initiative",
+    "category": "Healthcare",
+    "amount": 1500,
+    "description": "Support our Medical Relief Initiative to provide critical healthcare services to those in need. Your contribution will help us provide medical supplies, equipment, and treatment to communities facing health crises. From emergency medical care to ongoing health education programs, we are committed to improving access to quality healthcare for all. Join us in making a difference and bringing hope to those struggling with health challenges.",
+    "timestamp": "2024-05-07T12:00:00Z",
+    "isDeleted": false,
+    "totalReceived": 380
+  },
+  {
+    "image": "https://www.ukbet-bd.org/wp-content/uploads/2023/06/website-template-images-2.jpg",
+    "title": "Children's Education",
+    "category": "Education",
+    "amount": 2800,
+    "description": "Join us in supporting children's education and ensuring a brighter future for the next generation. Our program provides educational resources, school supplies, and scholarships to children from low-income families. By investing in their education, we empower children to break the cycle of poverty and reach their full potential. Your contribution will make a difference in the lives of these children and help them build a better tomorrow.",
+    "timestamp": "2024-05-07T12:00:00Z",
+    "isDeleted": false,
+    "totalReceived": 300
+  },
+  {
+    "image": "https://static.wixstatic.com/media/232f59_6c2e4388cf164a73bb68561f6f032975~mv2_d_5472_3648_s_4_2.jpg/v1/fill/w_2024,h_958,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/232f59_6c2e4388cf164a73bb68561f6f032975~mv2_d_5472_3648_s_4_2.jpg",
+    "title": "Feed the Hungry",
+    "category": "Food",
+    "amount": 2400,
+    "description": "Join us in our mission to feed the hungry and alleviate hunger in our communities. The 'Feed the Hungry' campaign aims to provide nutritious meals to those who are facing food insecurity. Your contribution will help us distribute food aid, establish community kitchens, and support local food banks. Together, we can ensure that no one goes to bed hungry and that everyone has access to the nourishment they need to thrive.",
+    "timestamp": "2024-05-07T12:00:00Z",
+    "isDeleted": false,
+    "totalReceived": 350
+  },
+  {
+    "image": "https://www.bssnews.net/assets/news_photos/2023/02/14/image-110696-1676389511.jpg",
+    "title": "Rescuing Lives",
+    "category": "Emergency Rescue",
+    "amount": 2500,
+    "description": "Join us in our mission to rescue lives in emergency situations. The 'Rescuing Lives' initiative aims to provide rapid response and assistance during disasters, accidents, and other critical incidents. Your contribution will support emergency rescue teams, medical aid, search and rescue operations, and disaster relief efforts. Together, we can save lives and provide hope to those in their darkest hours.",
+    "timestamp": "2024-05-07T12:00:00Z",
+    "isDeleted": false,
+    "totalReceived": 400
+  },
+  {
+    "image": "https://asianews.network/wp-content/uploads/bfi_thumb/AK_indcov_210622-1-75eohzjmtoqf4od8fye590rtwtw57e0xgmwo2w0swg0.webp",
+    "title": "Flood Relief Fund",
+    "category": "Disaster Relief",
+    "amount": 3000,
+    "description": "Support our Flood Relief Fund to provide urgent assistance to communities affected by flooding. The devastating impact of floods can lead to displacement, loss of homes, and destruction of livelihoods. Your contribution will help provide emergency shelter, food, clean water, and medical aid to those affected by the flood. Together, we can provide relief and support to communities in their time of need.",
+    "timestamp": "2024-05-07T12:00:00Z",
+    "isDeleted": false,
+    "totalReceived": 550
   }
 ]

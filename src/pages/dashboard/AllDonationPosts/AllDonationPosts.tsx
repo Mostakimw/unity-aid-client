@@ -35,8 +35,8 @@ const AllDonationPosts = () => {
       key: _id,
       title,
       category,
-      amount,
-      totalReceived,
+      amount: `$${amount}`,
+      totalReceived: `$${totalReceived}`,
     })
   );
 

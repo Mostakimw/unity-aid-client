@@ -20,20 +20,24 @@ import { selectCurrentUser } from "../../../redux/features/auth/authSlice";
 import { useAppSelector } from "../../../redux/hooks";
 
 const DonationDetails = () => {
-  const user = useAppSelector(selectCurrentUser)
+  const user = useAppSelector(selectCurrentUser);
   const [open, setOpen] = useState(false);
 
   const params = useParams();
   const { data: donationData } = useGetSingleDonationPostQuery(params);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const { control, handleSubmit, setValue, watch } = useForm();
   const selectedAmount = watch("amount");
 
-
+  //! onsubmit handler
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     console.log(data);
+    if (!user) {
+      toast.error("Login first");
+      navigate("/account/login");
+    }
   };
 
   //! setting watch value by clicking the amounts btn
@@ -41,12 +45,13 @@ const DonationDetails = () => {
     setValue("amount", value);
   };
 
+  //! modal start
   const showModal = () => {
     setOpen(true);
   };
   const handleOk = () => {
-    navigate("/dashboard")
-    toast.success("Donation Completed")
+    navigate("/dashboard");
+    toast.success("Donation Completed");
     // model closing
     setOpen(false);
   };
@@ -55,12 +60,15 @@ const DonationDetails = () => {
     setOpen(false);
   };
 
+  //! modal end
+
   return (
     <div style={{ marginTop: 70 }}>
       <div className="bg-red-500 h-[500px]">
+        {/* donation image */}
         <img
-          src="https://donate.unhcr.org/sites/default/files/2023-03/rf1251513_dsc02919_1.jpg"
-          alt=""
+          src={donationData?.image}
+          alt={donationData?.title}
           className="w-full h-full object-cover"
         />
       </div>
@@ -158,6 +166,7 @@ const DonationDetails = () => {
               )}
             </div>
           </form>
+          {/* modal information */}
           <Modal
             title="Recheck before confirm"
             open={open}
@@ -184,13 +193,9 @@ const DonationDetails = () => {
           <h3>Together we ensure the supports that needed to them.</h3>
           <div className="pt-5 space-y-3">
             <p className="text-theme">Details about this donation post:</p>
-            <p className="font-semibold max-w-xl mx-auto">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-              neque fugit quibusdam illum ipsum non. Voluptatibus aliquam
-              laborum, natus molestiae voluptas sunt enim. Quos, maiores
-              molestiae! Recusandae sit, doloremque ducimus quisquam accusamus
-              expedita deserunt iure quas, assumenda, iusto reprehenderit
-              temporibus.
+            <h2>{donationData?.title}</h2>
+            <p className="font-light max-w-xl mx-auto">
+              {donationData?.description}
             </p>
           </div>
         </div>
