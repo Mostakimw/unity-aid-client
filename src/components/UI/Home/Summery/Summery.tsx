@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const Summery = () => {
   return (
     <div
-      className="summery  md:h-[calc(100vh-200px)] mt-28 bg-red-500"
+      className="summery  md:h-[calc(100vh-200px)] mt-28"
       style={{
         backgroundImage: `url(${summeryImg})`,
         backgroundRepeat: "no-repeat",
@@ -19,25 +19,25 @@ const Summery = () => {
         <div>
           {/* text div */}
           <motion.div
-             viewport={{ once: true }}
+            viewport={{ once: true }}
             variants={summeryText}
             initial="hidden"
             whileInView="visible"
             className="max-w-md space-y-4"
           >
             <h1>Nice to meet you</h1>
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos
-              aut, asperiores quisquam harum temporibus, velit natus neque
-              voluptatibus nemo esse sequi itaque nihil ratione modi labore ea
-              maxime fuga doloribus. Vitae repellat saepe impedit sed officiis
-              illo, similique, maiores ipsam quam sequi ab aliquam recusandae.
-              Magnam odio molestiae ipsam doloremque.
+            <p className="text-justify">
+              Explore who we are and what we stand for. Committed to
+              empowerment, innovation, and sustainability, we strive to make a
+              positive impact. Join us on a journey of inspiration and
+              possibility. Together, let's shape a brighter future and embrace
+              endless opportunities. Welcome to our community.
             </p>
           </motion.div>
         </div>
         {/* image div */}
         <motion.div
+          viewport={{ once: true }}
           variants={summeryImgAni}
           initial="hidden"
           whileInView="visible"

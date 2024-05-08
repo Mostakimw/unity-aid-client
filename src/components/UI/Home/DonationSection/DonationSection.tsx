@@ -5,14 +5,14 @@ import SectionTitle from "../../../reusable/SectionTitle/SectionTitle";
 import { useGetAllDonationPostQuery } from "../../../../redux/features/donation/donationApi";
 import DonationPostCard from "./DonationPostCard";
 import { TDonation } from "../../../../types";
+import Loader from "../../../reusable/loader/Loader";
 
 const DonationSection = () => {
   const { data: donationPosts, isFetching } =
     useGetAllDonationPostQuery(undefined);
-  console.log(donationPosts);
 
   if (isFetching) {
-    return <>Loading...</>;
+    return <Loader />;
   }
   return (
     <Container style={{ marginTop: 112 }}>

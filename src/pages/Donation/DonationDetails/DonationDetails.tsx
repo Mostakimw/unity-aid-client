@@ -64,7 +64,7 @@ const DonationDetails = () => {
 
   return (
     <div style={{ marginTop: 70 }}>
-      <div className="bg-red-500 h-[500px]">
+      <div className="h-[500px]">
         {/* donation image */}
         <img
           src={donationData?.image}

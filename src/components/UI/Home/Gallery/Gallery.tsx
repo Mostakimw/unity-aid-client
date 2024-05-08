@@ -41,7 +41,7 @@ const Gallery = () => {
       <div className="gallery mt-16">
         {/* carousel for medium and large devices */}
         {!isMobile ? (
-          <Carousel showThumbs={false} showStatus={false} infiniteLoop>
+          <Carousel showThumbs={false} showStatus={false} autoPlay infiniteLoop>
             {imageUrls.map((images, index) => (
               <GalleryCard key={index} images={images} />
             ))}
