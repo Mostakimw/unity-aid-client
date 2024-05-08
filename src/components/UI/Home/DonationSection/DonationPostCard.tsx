@@ -12,12 +12,13 @@ const DonationPostCard = ({ item }: { item: TDonation }) => {
     >
       <Card
         hoverable
+        className="overflow-hidden"
         cover={
           <img
             title={item.title}
             alt="example"
             src={item.image}
-            className="w-full h-96  object-cover bg-[#FEE3BD]"
+            className="w-full h-96 object-cover bg-[#FEE3BD] hover:scale-105 transition-all"
           />
         }
       >
