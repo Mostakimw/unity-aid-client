@@ -15,8 +15,8 @@ const { Header } = Layout;
 const items = [
   {
     label: (
-      <div className="flex items-center mt-[12px] ">
-        <img src={logo} alt="logo" className="w-12  mr-2" />
+      <div className="flex items-center  lg:mt-[12px] ">
+        <img src={logo} alt="logo" className="w-12  mr-2 " />
       </div>
     ),
     key: 1,

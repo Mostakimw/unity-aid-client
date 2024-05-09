@@ -1,5 +1,5 @@
 export const account = {
-  first: { y: -30, opacity: 0 },
+  first: { y: -20, opacity: 0 },
   last: {
     opacity: 1,
     duration: 0.8,

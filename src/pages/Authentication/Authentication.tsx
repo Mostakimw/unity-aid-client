@@ -39,7 +39,8 @@ const Authentication = () => {
         gutter={80}
         justify="center"
         align="middle"
-        style={{ minHeight: "100vh", padding: 10 }}
+        style={{  padding: 10 }}
+        className="sm:min-h-[80vh] md:min-h-[100vh]"
       >
         {/* Right side image */}
         <Col
@@ -47,7 +48,12 @@ const Authentication = () => {
           lg={{ span: 12, order: 1 }}
           className="gutter-row"
         >
-          <motion.div variants={account} initial="first" animate="last">
+          <motion.div
+            variants={account}
+            initial="first"
+            animate="last"
+            className=""
+          >
             <img
               src={loginImg}
               alt="Image"
@@ -63,7 +69,7 @@ const Authentication = () => {
         >
           <Row justify="center">
             <Col span={24}>
-              <div style={{ height: "400px" }}>
+              <div className="sm:h-[200px] lg:h-[400px]">
                 {" "}
                 {/* Set fixed height and overflow */}
                 <Tabs
