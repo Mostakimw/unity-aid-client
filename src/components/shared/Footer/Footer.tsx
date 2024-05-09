@@ -35,7 +35,7 @@ const Footer = () => {
                       className="text-gray-600 hover:text-gray-800 font-semibold block pb-2 text-sm"
                       href="#"
                     >
-                      Colleges
+                      Donations
                     </a>
                   </li>
                   <li>
@@ -43,7 +43,7 @@ const Footer = () => {
                       className="text-gray-600 hover:text-gray-800 font-semibold block pb-2 text-sm"
                       href="#"
                     >
-                      Admission
+                      About
                     </a>
                   </li>
                   <li>
@@ -51,7 +51,7 @@ const Footer = () => {
                       className="text-gray-600 hover:text-gray-800 font-semibold block pb-2 text-sm"
                       href="#"
                     >
-                      My Colleges
+                      Accounts
                     </a>
                   </li>
                   <li>
@@ -59,7 +59,7 @@ const Footer = () => {
                       className="text-gray-600 hover:text-gray-800 font-semibold block pb-2 text-sm"
                       href="#"
                     >
-                      Blogs
+                      Dashboard
                     </a>
                   </li>
                 </ul>
